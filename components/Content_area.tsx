@@ -8,7 +8,7 @@ import { updateContent } from "@/features/content/contentSlice";
 import { RootState } from "@/app/store/store";
 
 export default function ContentArea() {
-    const htmlContent = useSelector((state: RootState) => state);
+    const htmlContent = useSelector((state: RootState) => state.content);
     const dispatch = useDispatch();
     const [previewUrl, setPreviewUrl] = React.useState<string>("/preview.html");
 

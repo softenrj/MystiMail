@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { error } from "console";
 
 let isMail :string = '';
 try{

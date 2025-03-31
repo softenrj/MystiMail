@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { FaPaperPlane, FaSignature } from 'react-icons/fa';
+import { useSelector, useDispatch } from "react-redux";
+import { updateSig } from '@/features/Signature/sigSlice';
+import { RootState } from "@/app/store/store";
 
 export default function Sendopt() {
-  const [attachSignature, setAttachSignature] = useState(false);
+  const sig = useSelector((st: RootState) => st.signature);
+  const dispatch = useDispatch();
 
   const handleSendEmail = () => {
-    // Logic to send email
-    console.log('Email sent with signature:', attachSignature);
+    console.log('Email sent with signature:', sig);
   };
 
   return (
@@ -14,8 +17,8 @@ export default function Sendopt() {
       <div className="flex items-center">
         <input
           type="checkbox"
-          checked={attachSignature}
-          onChange={() => setAttachSignature(!attachSignature)}
+          checked={sig}
+          onChange={() => dispatch(updateSig(!sig))}
           className="mr-2"
         />
         <label className="flex items-center">

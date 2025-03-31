@@ -1,7 +1,17 @@
-import React from 'react';
-import { FiUser, FiMail, FiChevronDown } from 'react-icons/fi';
+import React from "react";
+import { FiUser, FiMail, FiChevronDown } from "react-icons/fi";
+import { useSelector, useDispatch } from "react-redux";
+import { updateEmail } from "@/features/Emailchange/Slice";
+import { RootState } from "@/app/store/store";
 
 export default function OptionsEmail() {
+  const dispatch = useDispatch();
+  const Email: string = useSelector((state: RootState) => state.email);
+
+  const handleEmailChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(updateEmail(event.target.value));
+  };
+
   return (
     <div className="max-w-2xl p-6 bg-white flex items-center space-x-6">
       <div className="relative flex-1">
@@ -9,9 +19,13 @@ export default function OptionsEmail() {
         <select
           className="w-full pl-10 pr-12 py-3 text-lg border-2 border-gray-200 rounded-xl appearance-none
                      focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-all"
+          value={Email}
+          onChange={handleEmailChange}
         >
-          <option value="rjsharmase@gmail.com" className="text-lg">rjsharmase@gmail.com</option>
-          <option value="fastgame308@gmail.com" className="text-lg" defaultChecked>
+          <option value="rjsharmase@gmail.com" className="text-lg">
+            rjsharmase@gmail.com
+          </option>
+          <option value="fastgame308@gmail.com" className="text-lg">
             fastgame308@gmail.com
           </option>
         </select>
@@ -29,7 +43,6 @@ export default function OptionsEmail() {
           placeholder="Enter recipient email"
         />
       </div>
-
     </div>
   );
 }
