@@ -1,13 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import contentReducer from "@/features/content/contentSlice";
-import EmailReducer from "@/features/Emailchange/Slice";
-import signatureReducer from "@/features/Signature/sigSlice";
+import EmailReducer from "@/features/Email/EmailSlice";
 
 export const store = configureStore({
     reducer: {
-        content: contentReducer,
-        email: EmailReducer,
-        signature: signatureReducer
+        Email: EmailReducer
     }
 });
 

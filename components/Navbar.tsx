@@ -9,8 +9,8 @@ export default function Navbar() {
                 <Image
                     src={'/logo.png'}
                     alt='Logo'
-                    layout='fill'
-                    sizes='30'
+                    height={30}
+                    width={50}
                 />
             </div>
             <button

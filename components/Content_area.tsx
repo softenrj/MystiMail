@@ -4,11 +4,11 @@ import Editor from "@monaco-editor/react";
 import axios from "axios";
 import { debounce } from "lodash";
 import { useSelector, useDispatch } from "react-redux";
-import { updateContent } from "@/features/content/contentSlice";
+import { updateContent } from "@/features/Email/EmailSlice";
 import { RootState } from "@/app/store/store";
 
 export default function ContentArea() {
-    const htmlContent = useSelector((state: RootState) => state.content);
+    const htmlContent = useSelector((state: RootState) => state.Email.content);
     const dispatch = useDispatch();
     const [previewUrl, setPreviewUrl] = React.useState<string>("/preview.html");
 
