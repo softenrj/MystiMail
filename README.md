@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Custom HTML Email Sender with Nodemailer
+
+This is a Next.js project that allows users to send custom HTML emails. It integrates Nodemailer for email sending, and features a Monaco editor for writing the HTML email content. The application also provides real-time output rendering of the email content using an iframe and offers an option to attach a signature to the email. The entire state is managed using Redux Toolkit.
+
+## Demo Video
+
+Watch the demo video below to see how the email sender works:
+
+<video width="100%" autoplay loop controls>
+  <source src="https://your-hosted-link.com/demo.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+
+## Features
+
+- **Email Options**: Choose the 'From', 'To', 'BCC', and 'Subject' fields.
+- **Monaco Panel**: A Monaco editor to write and edit custom HTML content for the email.
+- **Real-Time Preview**: See how the email will look in real-time with an iframe rendering the HTML.
+- **Attach Signature**: Option to attach a signature with the email.
+- **Send Email**: Send the email with a toast notification confirming the action.
+- **State Management**: All app state is managed by Redux Toolkit.
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (>=14.x)
+- npm (>=6.x)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/softenrj/your-repo-name.git
+cd your-repo-name
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2.Install the dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd your-repository-name
+npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 3.Set up environment variables for Nodemailer:
+ - Create a .env.local file at the root of the project and add your email configuration, for example:
 
-## Learn More
+ ```ini
+ EMAIL1 = "app_password" //email 1
+ EMAIL2 = "app_password" //email 2
+ ```
 
-To learn more about Next.js, take a look at the following resources:
+### 4.Start the development server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```ini
+    npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 5.Visit http://localhost:3000 in your browser to access the email sender app.
 
-## Deploy on Vercel
+## Usage
+**Fill in the email fields:**
+- Provide the From, To, BCC, and Subject for the email.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Write your HTML content:**
+- Use the Monaco Editor to write your custom HTML email content. The email content will be rendered in the iframe below in real-time.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Attach a signature (Optional):**
+- Attach a signature (Optional): 
+- ⚠️if you already make a signature.html in /public and add your signature
+
+**Send the email:**
+- Hit the Send Email button, and if successful, you’ll get a toast notification confirming the email was sent.
+
+## Technologies Used
+ - **Next.js:** React framework for building the web application.
+
+ - **Nodemailer:** Library for sending emails.
+
+ - **Monaco Editor:** Code editor used for writing HTML content
