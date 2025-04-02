@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useRef } from "react";
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
 import Editor from "@monaco-editor/react";
 import axios from "axios";
@@ -24,9 +24,11 @@ export default function ContentArea() {
         }
     }, 500);
 
+    const SaveHtmlRef = useRef(saveHtml)
+
     useEffect(() => {
         if (typeof htmlContent === "string" && htmlContent.trim()) {
-            saveHtml(htmlContent);
+            SaveHtmlRef.current(htmlContent);
         }
     }, [htmlContent]);
     

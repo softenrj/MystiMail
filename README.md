@@ -6,10 +6,10 @@ This is a Next.js project that allows users to send custom HTML emails. It integ
 
 Watch the demo video below to see how the email sender works:
 
-<video width="100%" autoplay loop controls>
-  <source src="https://your-hosted-link.com/demo.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+## 🎬 Demo Video  
+
+[![Watch Demo](https://img.shields.io/badge/🎥%20Watch%20Demo%20Video-red?style=for-the-badge)](https://drive.google.com/file/d/1mfuzsdWwozlLhGJPBTDr4dPtLB8NpUMy/view?usp=sharing)
+
 
 
 ## Features
